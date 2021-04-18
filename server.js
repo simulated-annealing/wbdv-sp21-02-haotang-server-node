@@ -2,10 +2,10 @@ const express = require('express')
 const app = express()
 
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://root:root@cluster0.oqept.mongodb.net/myFirstDatabase', {
+mongoose.connect('mongodb+srv://root:root@cluster0.oqept.mongodb.net/cs5610', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-})
+}, () => console.log('mongoose is connected!'))
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
