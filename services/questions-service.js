@@ -1,19 +1,16 @@
-const questions = require('./questions.json')
+const questionsDao = require('../models/questions/questions-dao')
 
-// NodeJS Assignment
+const findAllQuestions = () =>
+    questionsDao.findAllQuestions()
+
+const findQuestionById = questionId =>
+    questionsDao.findQuestionById(questionId)
+
 const findQuestionsForQuiz = quizId =>
-    questions.filter(q =>
-        q.quizId === quizId)
-
-// MongoDB Assignment
-const createQuestion = () => {}
-const updateQuestion = () => {}
-const deleteQuestion = () => {}
-
+    questionsDao.findQuestionsForQuiz(quizId)
 
 module.exports = {
-    findQuestionsForQuiz,
-    createQuestion,
-    updateQuestion,
-    deleteQuestion
+    findAllQuestions,
+    findQuestionById,
+    findQuestionsForQuiz
 }

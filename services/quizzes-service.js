@@ -1,23 +1,12 @@
-const quizzes = require('./quizzes.json')
+const quizzesDao = require('../models/quizzes/quizzes-dao')
 
-// NodeJS Assignment
 const findAllQuizzes = () => 
-    quizzes
+    quizzesDao.findAllQuizzes()
 
 const findQuizById = quizId => 
-    quizzes.find(q =>
-        q._id === quizId)
-
-// MongoDB Assignment
-const createQuiz = () => {}
-const updateQuiz = () => {}
-const deleteQuiz = () => {}
-
+    quizzesDao.findQuizById(quizId)
 
 module.exports = {
-    createQuiz,
     findAllQuizzes,
-    findQuizById,
-    updateQuiz,
-    deleteQuiz
+    findQuizById
 }
